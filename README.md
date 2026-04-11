@@ -1,4 +1,5 @@
 # Synapse — Frontend
+#Estive aqui. Prof. Rondineli Seba Salomão
 
 Interface web da plataforma Synapse. Permite ao usuário submeter vídeos do YouTube, visualizar o quiz gerado e interagir com o agente tutor em uma sessão de estudos.
 
