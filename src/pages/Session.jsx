@@ -39,7 +39,10 @@ export default function Session() {
 
     try {
       const { data } = await submitAnswer(id, { flashcard_id: flashcard.id, answer_given: answerIndex })
-      setMessages(prev => [...prev, { text: data.feedback, isAgent: true }])
+      const feedback = data.is_correct
+        ? `✔ Correto! ${data.selected_explanation}`
+        : `✘ Incorreto. ${data.selected_explanation} A resposta certa: ${data.correct_explanation}`
+      setMessages(prev => [...prev, { text: feedback, isAgent: true }])
 
       if (currentIndex + 1 < quiz.flashcards.length) {
         setCurrentIndex(i => i + 1)
